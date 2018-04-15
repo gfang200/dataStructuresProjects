@@ -1,5 +1,9 @@
 CSCI C-343 Data Structures & Algorithms Fall 2014
 ============
+Here, you will find my work on data structures and algorithms. This is where you will see examples of my cleanest code, and greatest focus on efficiency. While I performed exceptionally well on this course material, I would not say that the implementation of these algorithms is my biggest strength as a hybrid business consultant & hacker. 
+<br/><br/>
+Nonetheless, the concepts that I learned & implemented in this course have made a tremendous impact in my coding style, intellectual curiosity, and understanding of programming. 
+
 Projects
 --------------- 
 Folder Name  | Project Description
