@@ -1,8 +1,8 @@
 CSCI C-343 Data Structures & Algorithms Fall 2014
 ============
-Here, you will find my work on data structures and algorithms. This is where you will see examples of my cleanest and most efficient code. While I performed exceptionally well on the course material, I would not say that the implementation of these algorithms is my biggest strength as a consultant/developer. 
+Here, you will find my work on data structures and algorithms. This is where you will see examples of my cleanest and most efficient code. While I performed exceptionally well on the course material, I would not say that the implementation of these algorithms is my biggest strength as a consultant/hacker. 
 <br/><br/>
-Nonetheless, the concepts that I learned & implemented in this course have made a tremendous impact in my coding style, intellectual curiosity, and understanding of the foundations of programming. 
+Nonetheless, the concepts that I learned & implemented in this course have made a tremendous impact in my coding style, intellectual curiosity, and foundation in the fundementals of programming. 
 
 Projects
 --------------- 
