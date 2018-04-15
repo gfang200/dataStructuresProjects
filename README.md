@@ -18,5 +18,5 @@ Homework
 binaryAdd, Linear Search, knapsack greedy, knapsack dyanamic, Queues & Stacks, insertion sort, quicksort
 
 ### Concepts ###
-basic time complexity, greedy algorithms vs dynamic programming
+Basic time complexity, greedy algorithms vs dynamic programming
 
