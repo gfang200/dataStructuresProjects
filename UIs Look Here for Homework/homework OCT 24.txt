@@ -1,0 +1,104 @@
+16.1 
+The recurrence relationship is:
+c[i,j] = {0 if Sij=0} and {max(c[i,k]+c[k,j]+1) if Sij!=0}
+
+dynamic_selection(start,finish):
+	A={(0:0):0} #Empty Table
+	max_table = {}
+	n = len(start) #assume number of start times = number of activities
+	for i in range(n):
+		for j in range(n-i+1): #for each possible combination
+			foo=j+i
+			max_table[(i,foo)]=-1
+			if (finish[j]<start[foo]): #There is time for the activity
+				for k in range(j+1, foo-1): #the possible combinations afterwards
+					if start[k]>=finish[j] and finish[k]<=start[foo]: #if k is an acceptable time based on the previous
+						kval = c[(j,k)]+c[(k,foo)]+1 #set value for activity k
+						if kval>c[(j,foo)]: #K value greater than current value
+							c[(j,foo)] = kval #set c value to k value
+							max_table[(j,foo)] = k #set the max value to the greatest value, which is k
+
+each cell takes 3 for loops, so the conclusion is that the algorithm would take worst case O(n^3) which is worse than
+the greedy algorithms O(n). Greedy algorithm>Dynamic Algorithm
+
+16.2-2
+
+def knapsack(w,v,W,n):
+	#w is weight v is value W is max weight n is items
+	B = [0 for number in range(n)]
+	for i in range(len(B)):
+		B[i] = [0 for weight in range(W)] #setting up dynamic programming table
+
+	for i in range(n): #for each potential item
+		for j in range(W): #for each weight point
+			if w[i] <= j #if the weight of item i can fit in the bag (possible solution)
+				if v[i]+B[i-1][j-w[i]] > B[i-1][w]: # if the value of the new item is greater than total value of the current setup
+					B[i][j]=v[i]+B[i-1][j-w[i]] #update current value at table position B[i][j]
+				else:
+					B[i][j]=B[i-1][w] #one less item to add to knapsack
+			else: #item doesnt fit at all
+				B[i][j]=B[i-1][w]
+
+		
+16.2 - 4 
+
+total distance from last stop =0
+for every spot
+	if the total distance from the last stop + the distance to the next spot > 2 miles
+		mark that spot
+		add one to total water stops
+		set the total distance from last stop to 0
+	if less than 2 miles
+		add the distance to total distance from last stop
+	return the marked spot
+
+The professor won't stop if he doesn't have to (ie if he can make it to the next stop without stoping)
+the current optimal solution is in m stops if there is another solution with m-1 stops it 
+would be impossible to finish the route with the omitted stop m. Therefor the algorithm is optimal
+and the total running time is O(n) n being the total number of possible stops
+
+16.3-1
+If the frequency of the most common letter at the top of the tree was equivilent to 
+the frequency of the least common letter at the bottom of the tree, then all the
+different letters in the tree must have the same frequency.
+
+7.1-1
+
+A = [13,19,9,5,12,8,7,4,21,2,6,11]
+A = [||13,19,9,5,12,8,7,4,21,2,6|11]
+A = [|13|19,9,5,12,8,7,4,21,2,6|11]
+A = [|13,19|9,5,12,8,7,4,21,2,6|11]
+A = [9|19,13|5,12,8,7,4,21,2,6|11]
+A = [9,5|13,19|12,8,7,4,21,2,6|11]
+A = [9,5|13,19,12|8,7,4,21,2,6|11]
+A = [9,5,8|19,12,13|7,4,21,2,6|11]
+A = [9,5,8,7|12,13,19|4,21,2,6|11]
+A = [9,5,8,7,4|13,19,12|21,2,6|11]
+A = [9,5,8,7,4|13,19,12,21|2,6|11]
+A = [9,5,8,7,4,2|19,12,21,13|6|11]
+A = [9,5,8,7,4,2,6|12,21,13,19||11]
+A = [9,5,8,7,4,2,6|11|12,21,13,19|]
+
+7.1-3
+
+The running time of partition is [Theta](n) because the upper bound of partition is
+O(n) as partition has to go through each element and move the partition lines/swap and move lines
+(swap is constant time), and the lower bound is [Omega](n) because even if everything
+is in the right position, partition will still go through each element and move the partition lines
+each iteration has costant time and there are n iterations
+
+7.2-2
+The running time of quicksort when all elements of array A has the same value is worst case
+O(n^2) because the each partition will be one sided with [n-1] elements each iteration it
+is similar to the decreasing order where every iteration is completely one sided
+
+7.3-2
+
+[Theta](n) calls are made to random in both cases
+Random is called once for each partition is called by randomized quicksort the worst case is if
+the partitioning produces size n-1 and size 0 for partition halves. Then you would have n calls
+to partition, giving you n calls to random T(n)=T(n-1)+1
+The best case produces two subproblems of n/2 size. one will have n/2 and the other will be n/2-1
+you will then have to run random once for both subproblems so it would be T(n)=2T(n/2)+1 so
+there would still be n calls because every call to the quicksort sorts one element and
+you need to sort n elements

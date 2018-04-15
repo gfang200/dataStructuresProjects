@@ -1,0 +1,28 @@
+Project 3 Line Detection
+
+Code explanation:
+
+BST Insert
+	I simply compare elements as I walk down the tree until I find an empty leaf I can place the node into
+AVL Insert
+	I call BST instert, then rebalance the AVL from the placed node on up
+
+BST delete
+	There are several cases to consider as well as the special cases for the root.
+	If the node has no children, it is replaced with None
+	If the node has one child, that child replaces the node
+	If the node has two children, I find the smallest node larger than the current node and exchange the keys. 
+		I then delete that successor node
+AVL delete
+	I modify the BST delete to return the parent of the deleted node. I then delete the node and run balance starting on the parent
+
+Balance
+	There are four cases to consider, right or left heavy of the current node and right-left heavy of the heavyside node.
+	I then use rotations to balance out the tree 
+
+Rotation
+	I rearrange pointers to shift nodes over to the left or right taking care if parents do no exists (root node case)
+
+Time Difference
+	The AVL Tree saves approx .05 seconds in the batch mode tests of driver.py
+	I hypothesize that with such small sizes, we are hard pressed to see big differences in runtime

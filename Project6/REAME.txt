@@ -1,0 +1,10 @@
+George Fang
+Code explantion:
+
+We did a double hasing impl of open addressing, Chris implemented a double hasing formula that prehashes and then prehashes
+again to the mod of the sum of a hash function multiplied by i.
+
+We start with a dictionary that double hashes all the keys. then inserting a new key value starts with checking if the table needs to be doubled,
+and doing that first if that has to be done (with rehashing all the elements. then inserting the new element at the end.
+
+aprox 2 Hours total
