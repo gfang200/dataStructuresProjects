@@ -14,9 +14,9 @@ MISC: Insertion sort implementation
 
 Homework
 --------------- 
-###Algorithms###
+### Algorithms ###
 binaryAdd, Linear Search, knapsack greedy, knapsack dyanamic, Queues & Stacks, insertion sort, quicksort
 
-###Concepts###
+### Concepts ###
 basic time complexity, greedy algorithms vs dynamic programming
 
