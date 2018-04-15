@@ -2,6 +2,11 @@ CSCI C-343 Data Structures & Algorithms Fall 2014
 ============
 Projects
 --------------- 
+First Header  | Second Header | Second Header
+------------- | ------------- | -------------
+Content Cell  | Content Cell  | Content Cell 
+Content Cell  | Content Cell  | Content Cell
+
 Project 1: Basic logical gateways in OOP (and, or, nor, nand, unary, not)
 Project 2: Flood game using set traversal on a 2d array
 Project 3: Implementation of binary search tree  with AVL rebalancing algorithm
